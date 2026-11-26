@@ -3219,7 +3219,7 @@ function connect(client, args, logger) {
             });
         }
         catch (error) {
-            logger.all("Failed to connect, are you sure your server works via FTP or FTPS? Users sometimes get this error when the server only supports SFTP.");
+            logger.all("Failed to connect to the FTP server. See the error below.");
             throw error;
         }
         if (args["log-level"] === "verbose") {
@@ -3275,8 +3275,6 @@ function deploy(args, logger, timings) {
         logger.all(`----------------------------------------------------------------`);
         logger.all(`🚀 Thanks for using ftp-deploy. Let's deploy some stuff!   `);
         logger.all(`----------------------------------------------------------------`);
-        logger.all(`If you found this project helpful, please support it`);
-        logger.all(`by giving it a ⭐ on Github --> https://github.com/SamKirkland/FTP-Deploy-Action`);
         logger.all(`or add a badge 🏷️ to your projects readme --> https://github.com/SamKirkland/FTP-Deploy-Action#badge`);
         logger.verbose(`Using the following excludes filters: ${JSON.stringify(args.exclude)}`);
         timings.start("hash");
