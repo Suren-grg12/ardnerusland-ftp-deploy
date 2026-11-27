@@ -3219,7 +3219,6 @@ function connect(client, args, logger) {
             });
         }
         catch (error) {
-            logger.all("Failed to connect to the FTP server. See the error below.");
             throw error;
         }
         if (args["log-level"] === "verbose") {
@@ -3273,9 +3272,8 @@ function deploy(args, logger, timings) {
         timings.start("total");
         // header
         logger.all(`----------------------------------------------------------------`);
-        logger.all(`🚀 Thanks for using ftp-deploy. Let's deploy some stuff!   `);
+        logger.all(`🚀 Ardnerusland FTP Deploy`);
         logger.all(`----------------------------------------------------------------`);
-        logger.all(`or add a badge 🏷️ to your projects readme --> https://github.com/SamKirkland/FTP-Deploy-Action#badge`);
         logger.verbose(`Using the following excludes filters: ${JSON.stringify(args.exclude)}`);
         timings.start("hash");
         const localFiles = yield (0, localFiles_1.getLocalFiles)(args);
